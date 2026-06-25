@@ -30,8 +30,8 @@ public class PedidoController {
     }
 
     @PostMapping
-    public Pedido salvar(@RequestBody Pedido pedido) {
-        return pedidoService.salvar(pedido);
+    public Pedido criar(@RequestBody Pedido pedido) {
+        return pedidoService.criar(pedido);
     }
 
     @DeleteMapping("/{id}")

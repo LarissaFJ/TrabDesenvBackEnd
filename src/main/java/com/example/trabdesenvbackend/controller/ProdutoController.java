@@ -30,8 +30,8 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public Produto salvar(@RequestBody Produto produto) {
-        return produtoService.salvar(produto);
+    public Produto criar(@RequestBody Produto produto) {
+        return produtoService.criar(produto);
     }
 
     @DeleteMapping("/{id}")
