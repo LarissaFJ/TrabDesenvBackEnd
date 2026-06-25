@@ -16,19 +16,19 @@ public class PedidoService {
         this.pedidoRepository = pedidoRepository;
     }
 
-    public List<Pedido> findAll() {
+    public List<Pedido> listar() {
         return pedidoRepository.findAll();
     }
 
-    public Optional<Pedido> findById(Long id) {
+    public Optional<Pedido> consultarPorId(Long id) {
         return pedidoRepository.findById(id);
     }
 
-    public Pedido save(Pedido pedido) {
+    public Pedido salvar(Pedido pedido) {
         return pedidoRepository.save(pedido);
     }
 
-    public void deleteById(Long id) {
+    public void apagar(Long id) {
         pedidoRepository.deleteById(id);
     }
 }

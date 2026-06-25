@@ -18,25 +18,25 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public List<Produto> findAll() {
-        return produtoService.findAll();
+    public List<Produto> listar() {
+        return produtoService.listar();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> findById(@PathVariable Long id) {
-        return produtoService.findById(id)
+    public ResponseEntity<Produto> consultarPorId(@PathVariable Long id) {
+        return produtoService.consultarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Produto save(@RequestBody Produto produto) {
-        return produtoService.save(produto);
+    public Produto salvar(@RequestBody Produto produto) {
+        return produtoService.salvar(produto);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        produtoService.deleteById(id);
+    public ResponseEntity<Void> apagar(@PathVariable Long id) {
+        produtoService.apagar(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -18,25 +18,25 @@ public class PedidoController {
     }
 
     @GetMapping
-    public List<Pedido> findAll() {
-        return pedidoService.findAll();
+    public List<Pedido> listar() {
+        return pedidoService.listar();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pedido> findById(@PathVariable Long id) {
-        return pedidoService.findById(id)
+    public ResponseEntity<Pedido> consultarPorID(@PathVariable Long id) {
+        return pedidoService.consultarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Pedido save(@RequestBody Pedido pedido) {
-        return pedidoService.save(pedido);
+    public Pedido salvar(@RequestBody Pedido pedido) {
+        return pedidoService.salvar(pedido);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        pedidoService.deleteById(id);
+    public ResponseEntity<Void> apagar(@PathVariable Long id) {
+        pedidoService.apagar(id);
         return ResponseEntity.noContent().build();
     }
 }

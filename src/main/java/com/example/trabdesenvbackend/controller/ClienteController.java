@@ -18,25 +18,25 @@ public class ClienteController {
     }
 
     @GetMapping
-    public List<Cliente> findAll() {
-        return clienteService.findAll();
+    public List<Cliente> listar() {
+        return clienteService.listar();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> findById(@PathVariable Long id) {
-        return clienteService.findById(id)
+    public ResponseEntity<Cliente> consultarPorId(@PathVariable Long id) {
+        return clienteService.consultarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Cliente save(@RequestBody Cliente cliente) {
-        return clienteService.save(cliente);
+    public Cliente salvar(@RequestBody Cliente cliente) {
+        return clienteService.salvar(cliente);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        clienteService.deleteById(id);
+    public ResponseEntity<Void> apagar(@PathVariable Long id) {
+        clienteService.apagar(id);
         return ResponseEntity.noContent().build();
     }
 }

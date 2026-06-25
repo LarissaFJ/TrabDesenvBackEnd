@@ -16,19 +16,19 @@ public class ProdutoService {
         this.produtoRepository = produtoRepository;
     }
 
-    public List<Produto> findAll() {
+    public List<Produto> listar() {
         return produtoRepository.findAll();
     }
 
-    public Optional<Produto> findById(Long id) {
+    public Optional<Produto> consultarPorId(Long id) {
         return produtoRepository.findById(id);
     }
 
-    public Produto save(Produto produto) {
+    public Produto salvar(Produto produto) {
         return produtoRepository.save(produto);
     }
 
-    public void deleteById(Long id) {
+    public void apagar(Long id) {
         produtoRepository.deleteById(id);
     }
 }

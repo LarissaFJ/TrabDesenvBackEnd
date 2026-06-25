@@ -16,19 +16,19 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
     }
 
-    public List<Cliente> findAll() {
+    public List<Cliente> listar() {
         return clienteRepository.findAll();
     }
 
-    public Optional<Cliente> findById(Long id) {
+    public Optional<Cliente> consultarPorId(Long id) {
         return clienteRepository.findById(id);
     }
 
-    public Cliente save(Cliente cliente) {
+    public Cliente salvar(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
-    public void deleteById(Long id) {
+    public void apagar(Long id) {
         clienteRepository.deleteById(id);
     }
 }
