@@ -2,19 +2,17 @@ package com.example.trabdesenvbackend.service;
 
 import com.example.trabdesenvbackend.model.Produto;
 import com.example.trabdesenvbackend.repository.ProdutoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ProdutoService {
 
     private final ProdutoRepository produtoRepository;
-
-    public ProdutoService(ProdutoRepository produtoRepository) {
-        this.produtoRepository = produtoRepository;
-    }
 
     public List<Produto> listar() {
         return produtoRepository.findAll();
